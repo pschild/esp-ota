@@ -11,7 +11,9 @@
   #error "Missing WIFI_PASSWORD"
 #endif
 
-#define VERSION "v2"
+#ifndef VERSION
+  #define VERSION "local-build"
+#endif
 
 long lastUpdateCheck = 0;
 const long UPDATE_INTERVAL = 1 * 60 * 60 * 1000; // 1 hour
