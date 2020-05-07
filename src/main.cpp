@@ -15,7 +15,7 @@
   #define VERSION "local-build"
 #endif
 
-long lastUpdateCheck = 0;
+unsigned long lastUpdateCheck = 0;
 const long UPDATE_INTERVAL = 1 * 60 * 60 * 1000; // 1 hour
 
 void connectToWifi() {
@@ -34,7 +34,7 @@ void connectToWifi() {
 }
 
 void checkForUpdate(bool forceUpdate) {
-  long now = millis();
+  unsigned long now = millis();
   if (
     WiFi.status() == WL_CONNECTED
     && (now >= lastUpdateCheck + UPDATE_INTERVAL || forceUpdate == true)
